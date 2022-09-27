@@ -31,3 +31,8 @@ $ go run ./main.go
 ```
 
 See More in here [`Documentation of go-elasticsearch`](https://github.com/elastic/go-elasticsearch/)
+
+## Data Source
+Credentials: https://www.themoviedb.org/settings/api
+API Docs: https://developers.themoviedb.org/3
+Postman: https://www.postman.com/devrel/workspace/tmdb-api/overview
