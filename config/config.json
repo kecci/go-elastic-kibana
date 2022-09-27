@@ -1,0 +1,15 @@
+{
+    "env" : "local",
+    "server" : {
+        "host": "localhost",
+        "port": "8080"
+    },
+    "elasticsearch" : {
+        "addresses" : ["http://localhost:9200"],
+        "username" : "",
+        "password" : "",
+        "max_idle_conns_per_host" : 10,
+        "response_header_timeout" : 1,
+        "dial_context_timeout" : 1
+    }
+}
