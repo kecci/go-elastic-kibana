@@ -14,4 +14,7 @@ type Config struct {
 		ResponseHeaderTimeout int      `json:"response_header_timeout"`
 		DialContextTimeout    int      `json:"dial_context_timeout"`
 	} `json:"elasticsearch"`
+	Tmdb struct {
+		ApiKey string `json:"api_key"`
+	} `json:"tmdb"`
 }

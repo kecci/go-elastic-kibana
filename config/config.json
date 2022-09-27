@@ -11,5 +11,8 @@
         "max_idle_conns_per_host" : 10,
         "response_header_timeout" : 1,
         "dial_context_timeout" : 1
+    },
+    "tmdb" : {
+        "api_key" : "b675b03cac1276f2215d66999972a047"
     }
 }

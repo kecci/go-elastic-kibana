@@ -33,8 +33,8 @@ func LoadConfiguration(file string) (config model.Config) {
 	return config
 }
 
-func LoadElasticsearcConfig(cfg model.Config) elasticsearch.Config {
-	return elasticsearch.Config{
+func LoadElasticsearchClient(cfg model.Config) *elasticsearch.Client {
+	esConfig := elasticsearch.Config{
 		Addresses: cfg.Elasticsearch.Addresses,
 		Username:  cfg.Elasticsearch.Username,
 		Password:  cfg.Elasticsearch.Password,
@@ -47,4 +47,21 @@ func LoadElasticsearcConfig(cfg model.Config) elasticsearch.Config {
 			},
 		},
 	}
+
+	// Init clieant
+	es, err := elasticsearch.NewClient(esConfig)
+	if err != nil {
+		fmt.Printf("Error elasticsearch.NewClient: %s \n", err)
+		return nil
+	}
+
+	// Get cluster info
+	res, err := es.Info()
+	if err != nil {
+		fmt.Printf("Error es.Info(): %s \n", err)
+		return nil
+	}
+	defer res.Body.Close()
+
+	return es
 }
